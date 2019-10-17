@@ -1,6 +1,56 @@
 <h1>About</h1>
 <p><br/><img alt="" height="303" src="/images/th.jpg" style="background-attachment: scroll; background-clip: border-box; background-color: transparent; background-image: none; background-origin: padding-box; background-position-x: initial; background-position-y: initial; background-repeat: no-repeat; background-size: auto; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; box-sizing: border-box; color: inherit; font-family: aileron; font-size: 34px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; orphans: 2; outline-color: black; outline-style: solid; outline-width: 1px; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px; padding: 0px; margin: 0px; border: 0px none currentColor;" width="500"/></p>
 <p></p>
+<p>原始碼:</p>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import 'dart:html';
+
+void main() {
+  // 每一組 10 人
+  int num = 10;
+  // 組序由 1 開始
+  int gth = 1;
+  // 迴圈序號變數
+  int i;
+  // 每組學員暫存數列
+  var gp_list = [];
+  // 全班分組數列
+  var cp2019 = [];
+
+  HttpRequest.getString(
+          'https://mde.tw/cp2019/downloads/2019fall_cp_1a_list.txt')
+      .then((String resp) {
+    // 利用 trim() 去除字串最後的跳行符號, 之後再利用 split() 根據 \n 轉為數列
+    var stud_list = resp.trim().split("\n");
+    // 數列利用 shuffle() 方法以隨機方法弄亂順序
+    stud_list.shuffle();
+    // 逐一讀取已經弄亂的學生學號數列, 利用模數運算每幾人分成一組
+    for (i = 0; i &lt; stud_list.length; i++) {
+      // 0, 1~(num-1), num
+      if (i % num == 0) {
+        gp_list = [];
+        // 列印區隔符號
+        print('=' * 20);
+        print("group $gth :");
+        print(stud_list[i]);
+        // 在各分組數列中加入將對應的學員學號
+        gp_list.add(stud_list[i]);
+        gth = gth + 1;
+      } else {
+        print(stud_list[i]);
+        // 在各分組數列中加入將對應的學員學號
+        gp_list.add(stud_list[i]);
+      }
+      if (i % num == 0) {
+        // 逐步將各組暫存的分組數列加入全班分組數列中
+        cp2019.add(gp_list);
+      }
+    }
+    // 列出全班分組數列
+    print(cp2019);
+  });
+}</pre>
+<p></p>
+<p>gist: <a href="https://gist.github.com/40823130/f37adb1ae5ba9734fb90b4d41d2cbb32">https://gist.github.com/40823130/f37adb1ae5ba9734fb90b4d41d2cbb32</a></p>
 <p><a href="http://mde.tw/dartpad/?id=f37adb1ae5ba9734fb90b4d41d2cbb32">http://mde.tw/dartpad/?id=f37adb1ae5ba9734fb90b4d41d2cbb32</a></p>
 <p></p>
 <pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">main() {
