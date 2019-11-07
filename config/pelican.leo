@@ -64,7 +64,6 @@
 </v>
 <v t="leo.20170710022054.1"><vh>可以另建節點存放 markdown 目錄下的 md 檔案</vh></v>
 <v t="leo.20170710022041.1"><vh>@path markdown</vh>
-<v t="leo.20191107152425.1"><vh>@edit 期中考.md</vh></v>
 <v t="leo.20191107151946.1"><vh>@edit 20191107.md</vh></v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
