@@ -29,8 +29,7 @@
 }</pre>
 <p></p>
 <p></p>
-<p><iframe height="600" src="https://dartpad.dev/embed-inline.html?id=4859a448b0c5f6cf645026e7f5407f49" width="800"></iframe></p>
-<h2>亂數分組</h2>
+<p><iframe height="600" src="https://dartpad.dev/embed-inline.html?id=4859a448b0c5f6cf645026e7f5407f49" width="800"></iframe></p><h2>亂數分組</h2>
 <p>gist: <a href="https://gist.github.com/40823130/e58d1f4bb803b9eaf51afe50899879a1">https://gist.github.com/40823130/e58d1f4bb803b9eaf51afe50899879a1</a></p>
 <p><a href="http://mde.tw/dartpad/?id=e58d1f4bb803b9eaf51afe50899879a1">http://mde.tw/dartpad/?id=e58d1f4bb803b9eaf51afe50899879a1</a></p>
 <p></p>
@@ -130,7 +129,43 @@ document.getElementById("iframe").height = 600 ;
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/xiiy4dsuANw" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/FlqweF72j6A" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/E6ekwID_bfw" width="560"></iframe></p>
-<h1>W16查驗</h1>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/GBIG5BcAcpY" width="560"></iframe></p><h1>W16查驗</h1>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/N589zCWTjbE" width="560"></iframe></p>
 <h1>W17考試</h1>
-<p><iframe height="600" src="http://mde.tw/dartpad/?id=4b1f0edb1956e35960de1c2f713d0d07" width="800"></iframe></p>
+<script>
+function getDart(dirname){
+    source = "https://dartpad.github.io/embed-dart.html?gh_owner=40823131&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+    document.getElementById("iframe").src = source ;
+}
+
+function getHtmlDart(dirname){
+    source = "https://dartpad.github.io/embed-html.html?gh_owner=40823131&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+
+function getFlutter(dirname){
+    source = "https://dartpad.github.io/embed-flutter.html?gh_owner=40823131&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+
+function largest(){
+document.getElementById("iframe").width = document.body.clientWidth ;
+document.getElementById("iframe").height = document.body.clientWidth*0.5 ;
+}
+
+function original(){
+document.getElementById("iframe").width = 800 ;
+document.getElementById("iframe").height = 600 ;
+}
+</script>
+<!-- 取 Dart 程式的按鈕 -->
+<h4>純 Dart 程式</h4>
+<p>gist: <a href="https://gist.github.com/40823130/8441cc13dc1b1883a68759f664c73b80">https://gist.github.com/40823130/8441cc13dc1b1883a68759f664c73b80</a></p>
+<p><button onclick="getDart('weight')">Weight conversion</button></p>
+<h4>Html 程式</h4>
+<p>dart: <a href="https://dartpad.github.io/?id=e2bd9b72716d509cd21c1e348422cc0b">https://dartpad.github.io/?id=e2bd9b72716d509cd21c1e348422cc0b</a></p>
+<p><button onclick="getHtmlDart('weight1')">Weight conversion</button></p>
+<p><!-- 內建放入的 Dart 原始碼 --></p>
+<p><button onclick="largest()">放大</button> <button onclick="original()">回復</button></p>
+<p><iframe height="600" id="iframe" src="https://dartpad.dartlang.org/embed-dart.html?gh_owner=40823131&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/rungekutta&amp;theme=dark" width="800"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/GBIG5BcAcpY" width="560"></iframe></p>
