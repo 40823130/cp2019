@@ -154,61 +154,8 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">你在哈囉嗎 << <a href='你在哈囉嗎.html'>Previous</a> <a href='二階常微分方程式.html'>Next</a> >> 二階常微分方程式<br /><h1>亂數分組</h1>
-<p>gist: <a href="https://gist.github.com/40823130/e58d1f4bb803b9eaf51afe50899879a1">https://gist.github.com/40823130/e58d1f4bb803b9eaf51afe50899879a1</a></p>
-<p><a href="http://mde.tw/dartpad/?id=e58d1f4bb803b9eaf51afe50899879a1">http://mde.tw/dartpad/?id=e58d1f4bb803b9eaf51afe50899879a1</a></p>
-<p></p>
-<p>原始碼:</p>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import 'dart:html';
-
-void main() {
-  // 每一組 10 人
-  int num = 10;
-  // 組序由 1 開始
-  int gth = 1;
-  // 迴圈序號變數
-  int i;
-  // 每組學員暫存數列
-  var gp_list = [];
-  // 全班分組數列
-  var cp2019 = [];
-
-  HttpRequest.getString(
-          'https://mde.tw/cp2019/downloads/2019fall_cp_1a_list.txt')
-      .then((String resp) {
-    // 利用 trim() 去除字串最後的跳行符號, 之後再利用 split() 根據 \n 轉為數列
-    var stud_list = resp.trim().split("\n");
-    // 數列利用 shuffle() 方法以隨機方法弄亂順序
-    stud_list.shuffle();
-    // 逐一讀取已經弄亂的學生學號數列, 利用模數運算每幾人分成一組
-    for (i = 0; i &lt; stud_list.length; i++) {
-      // 0, 1~(num-1), num
-      if (i % num == 0) {
-        gp_list = [];
-        // 列印區隔符號
-        print('=' * 20);
-        print("group $gth :");
-        print(stud_list[i]);
-        // 在各分組數列中加入將對應的學員學號
-        gp_list.add(stud_list[i]);
-        gth = gth + 1;
-      } else {
-        print(stud_list[i]);
-        // 在各分組數列中加入將對應的學員學號
-        gp_list.add(stud_list[i]);
-      }
-      if (i % num == 0) {
-        // 逐步將各組暫存的分組數列加入全班分組數列中
-        cp2019.add(gp_list);
-      }
-    }
-    // 列出全班分組數列
-    print(cp2019);
-  });
-}</pre>
-<p></p>
-<p><iframe height="600" src="https://dartpad.dev/embed-inline.html?id=e58d1f4bb803b9eaf51afe50899879a1" width="800"></iframe></p>
-<br />你在哈囉嗎 << <a href='你在哈囉嗎.html'>Previous</a> <a href='二階常微分方程式.html'>Next</a> >> 二階常微分方程式</div>
+    <div id="tipue_search_content">影片 << <a href='影片.html'>Previous</a> <br /><h1>W16查驗</h1>
+<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/N589zCWTjbE" width="560"></iframe></p><br />影片 << <a href='影片.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
